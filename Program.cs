@@ -4,11 +4,31 @@
     {
         static void Main(string[] args)
         {
+            Menu();
+        }
+
+        static void Menu()
+        {
             Console.Clear();
-            Sum();
-            Subtract();
-            Division();
-            Multiplication();
+            Console.WriteLine("========== Menu ==========");
+            Console.WriteLine("1 - Soma");
+            Console.WriteLine("2 - Subtração");
+            Console.WriteLine("3 - Divisão");
+            Console.WriteLine("4 - Multiplicação");
+            Console.WriteLine("5 - Sair");
+
+            Console.Write("Selecione uma opção: ");
+            short option = short.Parse(Console.ReadLine());
+
+            switch (option)
+            {
+                case 1: Sum(); break;
+                case 2: Subtract(); break;
+                case 3: Division(); break;
+                case 4: Multiplication(); break;
+                case 5: System.Environment.Exit(0); break;
+                default: break;
+            }
         }
 
         static void Sum()
@@ -25,6 +45,7 @@
 
             Console.WriteLine($"A soma dos valores informados é: {result}");
             Console.ReadKey();
+            Menu();
         }
 
         static void Subtract()
@@ -41,6 +62,7 @@
 
             Console.WriteLine($"A subtração dos valores informados é: {result}");
             Console.ReadKey();
+            Menu();
         }
 
         static void Division()
@@ -57,6 +79,7 @@
 
             Console.WriteLine($"A divisão dos valores informados é: {result}");
             Console.ReadKey();
+            Menu();
         }
 
         static void Multiplication()
@@ -73,6 +96,7 @@
 
             Console.WriteLine($"A multiplicação dos valores informados é: {result}");
             Console.ReadKey();
+            Menu();
         }
     }
 }
